@@ -19,8 +19,8 @@
   "homepage": "https://github.com/gabrielaqualidade/git-teste-ebac-ui#readme",
   "devDependencies": {
     "cypress": "^9.7.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.4.0"
   }
-
-  
 }
-
