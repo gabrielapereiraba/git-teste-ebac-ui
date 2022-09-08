@@ -11,7 +11,7 @@ describe('Funcionalidade Página de produtos', () => {
     
            
     });
-       it.only('Deve adicionar um produto no carrinho', () => {
+       it ('Deve adicionar um produto no carrinho', () => {
         var quantidade = 3
 
         cy.get('[class="product-block grid"]')
@@ -24,4 +24,12 @@ describe('Funcionalidade Página de produtos', () => {
            cy.get('.dropdown-toggle > .mini-cart-items').should('contain' , quantidade)
            cy.get('.woocommerce-message').should('contain' , quantidade + ' × “Ajax Full-Zip Sweatshirt” foram adicionados no seu carrinho.' )
        });
-}); 
+
+       it('Deve adicionar produtos ao carrinho - Usando Comando customizado', () => {
+        cy.addProdutos('Ajax Full-Zip Sweatshirt', 3)
+       });
+
+       it.only('Deve adicionar produtos ao carrinho - Usando Comando customizado', () => {
+        cy.addProdutos('Atlas Fitness Tank', 'XS' , 'Blue', 5)
+       });
+    }); 
